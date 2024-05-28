@@ -10,3 +10,11 @@ class Alumno(models.Model):
   
   def __str__(self):
     return f"{self.nombre} {self.apellidos}"
+
+class Curso(models.Model):
+  codigo = models.IntegerField(validators=[MinValueValidator(1000000), MaxValueValidator(9999999)])
+  nombre = models.CharField(max_length=100)
+  
+  def __str__(self):
+    return self.nombre
+   
