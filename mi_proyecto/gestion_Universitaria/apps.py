@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class NotasalumnosporcursoConfig(AppConfig):
+class GestionUniversitariaConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'NotasAlumnosPorCurso'
+    name = 'gestion_Universitaria'
