@@ -1,11 +1,12 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class Alumno(models.Model):
   cui = models.IntegerField(validators=[MinValueValidator(10000000), MaxValueValidator(99999999)], unique=True)
   nombre = models.CharField(max_length=100)
   apellidos = models.CharField(max_length=100)
-  edad = models.IntegerField(max_value=100)
+  edad = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
   dni = models.IntegerField(validators=[MinValueValidator(10000000), MaxValueValidator(99999999)])
   
   def __str__(self):
