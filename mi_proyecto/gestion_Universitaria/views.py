@@ -11,10 +11,10 @@ def agregar_alumno(request):
       return redirect('agregar_alumno')
   else:
     form = AlumnoForm()
-    
+
   alumnos = Alumno.objects.all()
-  return render(request, 'gestion_Universitaria/agregar_alumno.html', {'form': form})
-    
+  return render(request, 'gestion_Universitaria/agregar_alumno.html', {'form': form, 'alumnos': alumnos})
+
 def agregar_curso(request):
   if request.method == 'POST':
     form = CursoForm(request.POST)
