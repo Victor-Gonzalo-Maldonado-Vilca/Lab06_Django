@@ -7,7 +7,7 @@ def agregar_alumno(request):
     form = AlumnoForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('lista_alumnos')
+      return redirect('agregar_alumnos')
   else:
     form = AlumnoForm()
   return render(request, 'gestion_Universitaria/agregar_alumno.html', {'form': form})
@@ -17,7 +17,7 @@ def agregar_curso(request):
     form = CursoForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('lista_cursos')
+      return redirect('agregar_cursos')
   else:
     form = CursoForm()
   return render(request, 'gestion_Universitaria/agregar_curso.html', {'form': form})
@@ -27,7 +27,7 @@ def agregar_notas_alumnos_por_curso(request):
     form = NotasAlumnosPorCursoForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('notas_alumnos')
+      return redirect('agregar_alumnos')
   else:
     form = NotasAlumnosPorCursoForm()
   return render(request, 'gestion_Universitaria/agregar_notas.html', {'form': form})
