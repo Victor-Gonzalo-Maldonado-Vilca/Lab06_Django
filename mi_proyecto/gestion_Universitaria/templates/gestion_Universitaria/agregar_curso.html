@@ -22,6 +22,11 @@
     </div>
     <div>
       <h1>Lista de Cursos</h1>
+      <ul>
+        {% for curso in cursos %}
+          <li>{{ curso.codigo }} : {{ curso.nombre }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </body>
 </html>
