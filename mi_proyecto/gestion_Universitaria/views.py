@@ -13,7 +13,7 @@ def agregar_alumno(request):
   return render(request, 'gestion_Universitaria/agregar_alumno.html', {'form': form})
     
 def agregar_curso(request):
-  if request.method == 'POST'
+  if request.method == 'POST':
     form = CursoForm(request.POST)
     if form.is_valid():
       form.save()
@@ -22,8 +22,8 @@ def agregar_curso(request):
     form = CursoForm()
   return render(request, 'gestion_Universitaria/agregar_curso.html', {'form': form})
   
-def agregar_NotasAlumnosPorCursoForm(request):
-  if request.method == 'POST'
+def agregar_notas_alumnos_por_curso(request):
+  if request.method == 'POST':
     form = NotasAlumnosPorCursoForm(request.POST)
     if form.is_valid():
       form.save()
