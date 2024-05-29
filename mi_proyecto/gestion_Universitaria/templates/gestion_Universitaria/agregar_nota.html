@@ -9,38 +9,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <div>
-      <h1>Agregar Notas</h1>
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-      </form>
+    <nav>
       <a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a>
       <a href="{% url 'agregar_curso' %}">Lista de Cursos</a>
       <a href="#">Notas de los Alumnos</a>
+    </nav>
+    <div>
+      <center>
+        <h1>Agregar Notas</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Guardar</button>
+        </form>
+      </center>
     </div>
     <div>
-      <h1>Lista de Alumnos - curso - nota</h1>
-      {% if notas %}
-        <table border="1" style="text-align: center">
-          <tr>
-            <th>Alumno</th>
-            <th>Curso</th>
-            <th>Notas</th>
-          </tr>
-          {% for nota in notas %}
+      <center>
+        <h1>Lista de Alumnos - Curso - Notas</h1>
+        {% if notas %}
+          <table border="1" style="text-align: center">
             <tr>
-              <td>{{ nota.alumno}}</td>
-              <td>{{ nota.curso }}</td>
-              <td>{{ nota.notas }}</td>
+              <th>Alumno</th>
+              <th>Curso</th>
+              <th>Notas</th>
             </tr>
-          {% endfor %}
-        
-        </table>
-      {% else %}
-        <p>No hay notas en la base de datos.</p>
-      {% endif %}
+            {% for nota in notas %}
+              <tr>
+                <td>{{ nota.alumno}}</td>
+                <td>{{ nota.curso }}</td>
+                <td>{{ nota.notas }}</td>
+              </tr>
+            {% endfor %}
+          
+          </table>
+        {% else %}
+          <p>No hay notas en la base de datos.</p>
+        {% endif %}
+      </center>
     </div>
   </body>
 </html>
