@@ -1,5 +1,5 @@
-import django import forms
-import .models import Alumno, Curso, NotasAlumnosPorCurso
+from django import forms
+from .models import Alumno, Curso, NotasAlumnosPorCurso
 
 class AlumnoForm(forms.ModelForm):
   
