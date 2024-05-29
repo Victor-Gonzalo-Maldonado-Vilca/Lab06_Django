@@ -22,29 +22,31 @@
     </div>
     <div>
       <h1 style="color: #A93226">Lista de Alumnos</h1>
-      {% if alumnos %}
-        <table border="1" style="text-align: center">
-          <tr>
-            <th>CUI</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Edad</th>
-            <th>DNI</th>
-          </tr>
-          {% for alumno in alumnos %}
+      <center>
+        {% if alumnos %}
+          <table border="1" style="text-align: center">
             <tr>
-              <td>{{ alumno.cui }}</td>
-              <td>{{ alumno.nombre }}</td>
-              <td>{{ alumno.apellidos }}</td>
-              <td>{{ alumno.edad }}</td>
-              <td>{{ alumno.dni }}</td>
+              <th>CUI</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Edad</th>
+              <th>DNI</th>
             </tr>
-          {% endfor %}
-        
-        </table>
-      {% else %}
-        <p>No hay alumnos en la base de datos.</p>
-      {% endif %}
+            {% for alumno in alumnos %}
+              <tr>
+                <td>{{ alumno.cui }}</td>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellidos }}</td>
+                <td>{{ alumno.edad }}</td>
+                <td>{{ alumno.dni }}</td>
+              </tr>
+            {% endfor %}
+          
+          </table>
+        {% else %}
+          <p>No hay alumnos en la base de datos.</p>
+        {% endif %}
+      </center>
     </div>
   </body>
 </html>
