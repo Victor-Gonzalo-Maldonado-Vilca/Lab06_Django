@@ -17,7 +17,7 @@
     </nav>
     <div>
       <center>
-        <h1>Agregar Cursos</h1>
+        <h1 style="color: #A93226">Agregar Cursos</h1>
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
@@ -27,7 +27,7 @@
     </div>
     <div>
       <center>
-        <h1>Lista de Cursos</h1>
+        <h1 style="color: #A93226">Lista de Cursos</h1>
         {% if cursos %}
           <table border="1" style="text-align: center">
             <tr>
