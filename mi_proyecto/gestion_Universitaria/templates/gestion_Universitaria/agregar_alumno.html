@@ -23,7 +23,7 @@
     <div>
       <h1>Lista de Alumnos</h1>
       {% if alumnos %}
-        <table>
+        <table border="1">
           <tr>
             <th>CUI</th>
             <th>Nombre</th>
@@ -40,7 +40,8 @@
               <td>{{ alumno.dni }}</td>
             </tr>
           {% endfor %}
-        </ul>
+        
+        </table>
       {% else %}
         <p>No hay alumnos en la base de datos.</p>
       {% endif %}
