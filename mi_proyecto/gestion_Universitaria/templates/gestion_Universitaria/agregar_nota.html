@@ -22,11 +22,25 @@
     </div>
     <div>
       <h1>Lista de Alumnos - curso - nota</h1>
-      <ul>
-        {% for nota in notas %}
-          <li>{{ nota.alumno }} : {{ nota.curso }} : {{ nota.notas }}</li>
-        {% endfor %}
-      </ul>
+      {% if notas %}
+        <table border="1">
+          <tr>
+            <th>Alumno</th>
+            <th>Curso</th>
+            <th>Notas</th>
+          </tr>
+          {% for nota in notas %}
+            <tr>
+              <td>{{ nota.alumno}}</td>
+              <td>{{ nota.curso }}</td>
+              <td>{{ nota.notas }}</td>
+            </tr>
+          {% endfor %}
+        
+        </table>
+      {% else %}
+        <p>No hay notas en la base de datos.</p>
+      {% endif %}
     </div>
   </body>
 </html>
