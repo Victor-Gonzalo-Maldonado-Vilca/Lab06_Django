@@ -11,16 +11,16 @@
   <body>
     <div>
       <nav>
-        <a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a>
-        <a href="#">Lista de Cursos</a>
-        <a href="{% url 'agregar_nota' %}">Notas de los Alumnos</a>
+        <button class="navegaacion"><a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a></button>
+        <button class="navegaacion"><a href="#">Lista de Cursos</a></button>
+        <button class="navegaacion"><a href="{% url 'agregar_nota' %}">Notas de los Alumnos</a></button>
       </nav>
       <center>
         <h1 style="color: #A93226">Agregar Cursos</h1>
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">Guardar</button>
+          <button class="boton" type="submit">Guardar</button>
         </form>
       </center>
     </div>

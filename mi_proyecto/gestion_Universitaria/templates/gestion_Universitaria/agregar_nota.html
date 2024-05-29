@@ -10,9 +10,9 @@
   </head>
   <body>
     <nav>
-      <a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a>
-      <a href="{% url 'agregar_curso' %}">Lista de Cursos</a>
-      <a href="#">Notas de los Alumnos</a>
+      <button class="navegaacion"><a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a></button>
+      <button class="navegaacion"><a href="{% url 'agregar_curso' %}">Lista de Cursos</a></button>
+      <button class="navegaacion"><a href="#">Notas de los Alumnos</a></button>
     </nav>
     <div>
       <center>
@@ -20,7 +20,7 @@
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">Guardar</button>
+          <button class="boton" type="submit">Guardar</button>
         </form>
       </center>
     </div>
