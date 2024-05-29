@@ -10,7 +10,7 @@
   </head>
   <body>
     <div>
-      <h1>Agregar Alumnos</h1>
+      <h1 style="color: #A93226">Agregar Alumnos</h1>
       <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
@@ -21,7 +21,7 @@
       <a href="{% url 'agregar_nota' %}">Notas de los Alumnos</a>
     </div>
     <div>
-      <h1>Lista de Alumnos</h1>
+      <h1 style="color: #A93226">Lista de Alumnos</h1>
       {% if alumnos %}
         <table border="1" style="text-align: center">
           <tr>
