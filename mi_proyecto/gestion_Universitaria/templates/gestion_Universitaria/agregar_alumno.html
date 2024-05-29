@@ -22,6 +22,11 @@
     </div>
     <div>
       <h1>Lista de Alumnos</h1>
+      <ul>
+        {% for alumno in alumnos %}
+          <li>{{ alumno.cui}} : {{ alumno.nombre }} {{ alumno.apellidos }} : {{ alumno.edad }} : {{ alumno.dni }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </body>
 </html>
