@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import AlumnoForm, CursoForm, NotasAlumnosPorCursoForm
+from .models import Alumno, Curso, NotasAlumnosPorCurso
 
 # Create your views here.
 def agregar_alumno(request):
