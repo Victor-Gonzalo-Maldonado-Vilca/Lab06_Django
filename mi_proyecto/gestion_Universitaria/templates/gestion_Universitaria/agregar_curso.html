@@ -9,36 +9,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <div>
-      <h1>Agregar Cursos</h1>
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-      </form>
+    <nav>
       <a href="{% url 'agregar_alumno' %}">Lista de Alumnos</a>
       <a href="#">Lista de Cursos</a>
       <a href="{% url 'agregar_nota' %}">Notas de los Alumnos</a>
+    </nav>
+    <div>
+      <center>
+        <h1>Agregar Cursos</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Guardar</button>
+        </form>
+      </center>
     </div>
     <div>
-      <h1>Lista de Cursos</h1>
-      {% if cursos %}
-        <table border="1" style="text-align: center">
-          <tr>
-            <th>Codigo</th>
-            <th>Nombre del Curso</th>
-          </tr>
-          {% for curso in cursos %}
+      <center>
+        <h1>Lista de Cursos</h1>
+        {% if cursos %}
+          <table border="1" style="text-align: center">
             <tr>
-              <td>{{ curso.codigo }}</td>
-              <td>{{ curso.nombre }}</td>
+              <th>Codigo</th>
+              <th>Nombre del Curso</th>
             </tr>
-          {% endfor %}
-        
-        </table>
-      {% else %}
-        <p>No hay cursos en la base de datos.</p>
-      {% endif %}
+            {% for curso in cursos %}
+              <tr>
+                <td>{{ curso.codigo }}</td>
+                <td>{{ curso.nombre }}</td>
+              </tr>
+            {% endfor %}
+          
+          </table>
+        {% else %}
+          <p>No hay cursos en la base de datos.</p>
+        {% endif %}
+      </center>
     </div>
   </body>
 </html>
