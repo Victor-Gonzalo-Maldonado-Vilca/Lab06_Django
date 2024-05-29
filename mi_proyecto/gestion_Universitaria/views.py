@@ -10,6 +10,8 @@ def agregar_alumno(request):
       return redirect('agregar_alumno')
   else:
     form = AlumnoForm()
+    
+  alumnos = Alumno.objects.all()
   return render(request, 'gestion_Universitaria/agregar_alumno.html', {'form': form})
     
 def agregar_curso(request):
@@ -20,6 +22,8 @@ def agregar_curso(request):
       return redirect('agregar_curso')
   else:
     form = CursoForm()
+    
+  cursos = Curso.objects.all()
   return render(request, 'gestion_Universitaria/agregar_curso.html', {'form': form})
   
 def agregar_notas_alumnos_por_curso(request):
@@ -30,4 +34,6 @@ def agregar_notas_alumnos_por_curso(request):
       return redirect('agregar_nota')
   else:
     form = NotasAlumnosPorCursoForm()
+    
+  notas = NotasAlumnosPorCurso.objects.all()
   return render(request, 'gestion_Universitaria/agregar_nota.html', {'form': form})
