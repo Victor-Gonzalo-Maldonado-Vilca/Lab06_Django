@@ -15,6 +15,7 @@ class CursoForm(forms.ModelForm):
     
 class NotasAlumnosPorCursoForm(forms.ModelForm):
   alumno = forms.ModelChoiceField(queryset=Alumno.objects.all(), label='Alumno')
+  curso = forms.ModelChoiceField(queryset=Curso.objects.all(), label='Curso')
   
   class Meta:
     model = NotasAlumnosPorCurso
