@@ -23,10 +23,22 @@
     <div>
       <h1>Lista de Alumnos</h1>
       {% if alumnos %}
-        <p>Hay {{ alumnos|length }} alumnos en la base de datos:</p>
-        <ul>
+        <table>
+          <tr>
+            <th>CUI</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>DNI</th>
+          </tr>
           {% for alumno in alumnos %}
-            <li>{{ alumno.nombre }} {{ alumno.apellidos }}</li>
+            <tr>
+              <td>{{ alumno.cui }}</td>
+              <td>{{ alumno.nombre }}</td>
+              <td>{{ alumno.apellidos }}</td>
+              <td>{{ alumno.edad }}</td>
+              <td>{{ alumno.dni }}</td>
+            </tr>
           {% endfor %}
         </ul>
       {% else %}
