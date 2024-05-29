@@ -7,18 +7,23 @@
     <meta name="description" content="Agregar alumnos universitarios"/>
     <meta name="keywords" content="alumnos, agregar, universidad"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/estilos.css"
   </head>
   <body>
-    <div>
-      <h1 style="color: #A93226">Agregar Alumnos</h1>
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-      </form>
+    <nav>
       <a href="#">Lista de Alumnos</a>
       <a href="{% url 'agregar_curso' %}">Lista de Cursos</a>
       <a href="{% url 'agregar_nota' %}">Notas de los Alumnos</a>
+    </nav>
+    <div>
+      <center>
+        <h1 style="color: #A93226">Agregar Alumnos</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Guardar</button>
+        </form>
+      </center>
     </div>
     <div>
       <center>
