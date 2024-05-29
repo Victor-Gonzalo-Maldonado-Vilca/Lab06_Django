@@ -21,3 +21,13 @@ def agregar_curso(request):
   else:
     form = CursoForm()
   return render(request, 'gestion_Universitaria/agregar_curso.html', {'form': form})
+  
+def agregar_NotasAlumnosPorCursoForm(request):
+  if request.method == 'POST'
+    form = NotasAlumnosPorCursoForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('notas_alumnos')
+  else:
+    form = NotasAlumnosPorCursoForm()
+  return render(request, 'gestion_Universitaria/agregar_notas.html', {'form': form})
